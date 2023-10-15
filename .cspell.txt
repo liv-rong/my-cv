@@ -2,3 +2,10 @@ tauri
 xlink
 iconify
 Avenir
+unplugin
+Attributify
+unocss
+pinia
+vueuse
+composables
+nocheck
