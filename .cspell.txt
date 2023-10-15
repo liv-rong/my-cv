@@ -1,0 +1,4 @@
+tauri
+xlink
+iconify
+Avenir
