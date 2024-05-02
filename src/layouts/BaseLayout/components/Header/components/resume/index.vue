@@ -7,7 +7,7 @@ import { LayoutGrid } from 'lucide-vue-next'
 <template>
   <LayoutGrid
     :size="24"
-    class="cursor-pointer"
+    class="cursor-pointer hover:text-orange-500"
     @click="() => router.push('/resumes')"
   />
 </template>

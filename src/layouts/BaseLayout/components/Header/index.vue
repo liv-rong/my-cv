@@ -5,6 +5,8 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 import Github from './components/github/index.vue'
 import Resume from './components/resume/index.vue'
+import Save from './components/Save/index.vue'
+import LayoutIcon from './components/LayoutIcon/index.vue'
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import Resume from './components/resume/index.vue'
     class="h-16 flex justify-between items-center px-2"
   >
     <div
-      class="flex items-center justify-center gap-2"
+      class="flex items-center justify-center gap-2 cursor-pointer"
       @click="() => router.push('/')"
     >
       <img
@@ -29,6 +31,8 @@ import Resume from './components/resume/index.vue'
     <div class="flex gap-2 justify-end items-center">
       <Resume />
       <Github />
+      <Save />
+      <LayoutIcon />
     </div>
   </n-layout-header>
 </template>

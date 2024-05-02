@@ -7,7 +7,7 @@ import { AppMetadata } from '@/constants/index.ts'
 <template>
   <Github
     :size="24"
-    class="cursor-pointer"
+    class="cursor-pointer hover:text-orange-500"
     @click="() => BrowserUtils.openNewWindow(AppMetadata.REPO_GITHUB_URL)"
   />
 </template>

@@ -8,7 +8,7 @@ const router = useRouter()
     class="flex flex-col items-center justify-center min-h-[calc(100vh-91px)]"
   >
     <h1 class="text-4xl font-bold text-orange-500">
-      home 用 Markdown 写简历！ OhMyCV
+      用 Markdown 写简历！ OhMyCV
     </h1>
     <p class="text-base text-gray-500 font-light mb-10">
       能让您轻松的制作和管理简历，它开源免费，且绝不会（也无法）收集您的数据
