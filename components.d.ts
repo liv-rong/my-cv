@@ -13,6 +13,7 @@ declare module 'vue' {
     NButton: (typeof import('naive-ui'))['NButton']
     NLayout: (typeof import('naive-ui'))['NLayout']
     NLayoutFooter: (typeof import('naive-ui'))['NLayoutFooter']
+    NLayoutHeader: (typeof import('naive-ui'))['NLayoutHeader']
     RouterLink: (typeof import('vue-router'))['RouterLink']
     RouterView: (typeof import('vue-router'))['RouterView']
   }

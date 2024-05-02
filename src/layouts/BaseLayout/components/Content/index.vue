@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <router-view></router-view>
+  <div class="min-h-[calc(100vh-91px)] px-2">
+    <router-view></router-view>
+  </div>
 </template>
