@@ -9,3 +9,5 @@ pinia
 vueuse
 composables
 nocheck
+rong
+nprogress

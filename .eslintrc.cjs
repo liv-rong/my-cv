@@ -1,35 +1,45 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:vue/vue3-essential"
-    ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "parser": "@typescript-eslint/parser",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint",
-        "vue"
-    ],
-    "rules": {
+  env: {
+    browser: true,
+    es2021: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-essential'
+  ],
+  overrides: [
+    {
+      env: {
+        node: true
+      },
+      files: ['.eslintrc.{js,cjs}'],
+      parserOptions: {
+        sourceType: 'script'
+      }
     }
+  ],
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
+  },
+  plugins: ['@typescript-eslint', 'vue'],
+  rules: {
+    'vue/multi-word-component-names': 0,
+    '@typescript-eslint/no-explicit-any': 'off', //允许使用any
+    '@typescript-eslint/no-unused-vars': 'off', //允许使用未使用的变量
+    '@typescript-eslint/no-empty-function': 'off', //允许使用空函数
+    '@typescript-eslint/ban-ts-comment': 'off', //允许使用@ts-ignore
+    '@typescript-eslint/no-non-null-assertion': 'off', //允许使用非空断言
+    '@typescript-eslint/no-var-requires': 'off', //允许使用CommonJS的写法
+    'no-console': [
+      //提交时不允许有console.log
+      'warn',
+      {
+        allow: ['warn', 'error']
+      }
+    ],
+    'no-debugger': 'warn'
+  }
 }
