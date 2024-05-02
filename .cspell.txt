@@ -11,3 +11,4 @@ composables
 nocheck
 rong
 nprogress
+lucide

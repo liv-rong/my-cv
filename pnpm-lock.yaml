@@ -8,6 +8,9 @@ dependencies:
   '@types/nprogress':
     specifier: ^0.2.3
     version: 0.2.3
+  lucide-vue-next:
+    specifier: ^0.376.0
+    version: 0.376.0(vue@3.3.4)
   nprogress:
     specifier: ^0.2.0
     version: 0.2.0
@@ -2992,6 +2995,14 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lucide-vue-next@0.376.0(vue@3.3.4):
+    resolution: {integrity: sha512-Bu9UMf+TqisJy0NMGRL0rSUM4bhtX0nQGVkpLjoyTpOLgpUfXqW1mMBGaWRW3y1vsuNBY6Y4h0slywfv/cYQ7Q==}
+    peerDependencies:
+      vue: '>=3.0.1'
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /magic-string@0.30.4:
     resolution: {integrity: sha512-Q/TKtsC5BPm0kGqgBIF9oXAs/xEf2vRKiIB4wCRQTJOQIByZ1d+NnUOotvJOvNpi5RNIgVOMC3pOuaP1ZTDlVg==}

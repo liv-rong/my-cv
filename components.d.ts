@@ -11,6 +11,7 @@ declare module 'vue' {
     Header: (typeof import('./src/components/Header/index.vue'))['default']
     HelloWorld: (typeof import('./src/components/HelloWorld.vue'))['default']
     NButton: (typeof import('naive-ui'))['NButton']
+    NConfigProvider: (typeof import('naive-ui'))['NConfigProvider']
     NLayout: (typeof import('naive-ui'))['NLayout']
     NLayoutFooter: (typeof import('naive-ui'))['NLayoutFooter']
     NLayoutHeader: (typeof import('naive-ui'))['NLayoutHeader']

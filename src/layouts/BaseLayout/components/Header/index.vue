@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { AppMetadata } from '@/constants/index.ts'
 const { APP_NAME } = AppMetadata
+import { useRouter } from 'vue-router'
+const router = useRouter()
+import Github from './components/github/index.vue'
+import Resume from './components/resume/index.vue'
 </script>
 
 <template>
@@ -8,7 +12,10 @@ const { APP_NAME } = AppMetadata
     bordered
     class="h-16 flex justify-between items-center px-2"
   >
-    <div class="flex items-center justify-center gap-2">
+    <div
+      class="flex items-center justify-center gap-2"
+      @click="() => router.push('/')"
+    >
       <img
         class="-mb-2 cursor-pointer pb-2"
         src="../../../../assets/logo.png"
@@ -19,7 +26,10 @@ const { APP_NAME } = AppMetadata
       <span class="text-xl text-orange-500 font-bold">{{ APP_NAME }}</span>
     </div>
 
-    <div>Header</div>
+    <div class="flex gap-2 justify-end items-center">
+      <Resume />
+      <Github />
+    </div>
   </n-layout-header>
 </template>
 
