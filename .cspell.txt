@@ -12,3 +12,4 @@ nocheck
 rong
 nprogress
 lucide
+Menlo
