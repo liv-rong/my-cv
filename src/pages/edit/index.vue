@@ -13,7 +13,7 @@ import Operate from '@/components/Operate/index.vue'
         <Editor />
       </div>
       <div class="bg-bluegray w-2 h-full cursor-move" />
-      <div class="h-full">
+      <div class="h-full overflow-auto p-2">
         <Preview />
       </div>
     </div>

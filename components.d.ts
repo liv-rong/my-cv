@@ -21,5 +21,6 @@ declare module 'vue' {
     Preview: (typeof import('./src/components/Preview/index.vue'))['default']
     RouterLink: (typeof import('vue-router'))['RouterLink']
     RouterView: (typeof import('vue-router'))['RouterView']
+    ViewDetail: (typeof import('./src/components/Preview/viewDetail.vue'))['default']
   }
 }

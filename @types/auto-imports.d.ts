@@ -98,6 +98,8 @@ declare global {
     VNode,
     WritableComputedRef
   } from 'vue'
+  import('vue')
   // @ts-ignore
   export type { RouteLocationRaw } from 'vue-router'
+  import('vue-router')
 }
