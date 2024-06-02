@@ -18,6 +18,8 @@
     "prettier:fix": "prettier --write --ignore-unknown ."
   },
   "dependencies": {
+    "@starry-sky-studio/ui": "^1.0.0",
+    "@starry-sky-studio/utils": "^0.1.0",
     "@types/nprogress": "^0.2.3",
     "lucide-vue-next": "^0.376.0",
     "markdown-it": "^14.1.0",
