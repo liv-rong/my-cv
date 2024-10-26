@@ -19,7 +19,6 @@ router.beforeEach((to, from, next) => {
 })
 
 router.afterEach((to) => {
-  // 拼接站点标题
   // SiteUtils.setDocumentTitle(to.meta.title)
   // processRouteTag(to)
   NProgress.done()
