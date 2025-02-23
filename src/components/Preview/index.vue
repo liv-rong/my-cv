@@ -98,7 +98,7 @@ const renderMarkdown = (md: string) => {
 </script>
 
 <template>
-  <div class="bg-yellow size-full">sdfsf</div>
+  <div class="px-2 w-full h-full"></div>
   <!-- <div
     id="preview"
     :innerHTML="renderMarkdown(data.mdContent)"

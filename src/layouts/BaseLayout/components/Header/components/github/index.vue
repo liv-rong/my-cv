@@ -7,7 +7,7 @@ import { NTooltip } from 'naive-ui'
 
 <template>
   <Github
-    :size="22"
+    :size="20"
     class="cursor-pointer hover:text-orange-500"
     @click="() => BrowserUtils.openNewWindow(AppMetadata.REPO_GITHUB_URL)"
   />

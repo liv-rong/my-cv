@@ -1,71 +1,71 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
-import type * as Monaco from 'monaco-editor'
 
-import { setupMonacoEditor } from '@/components/Monaco'
+import * as monaco from 'monaco-editor'
 
-import { useDataStore } from '@/store/data'
+const editorRef = ref<HTMLDivElement | null>(null)
 
-const editorRef = ref<HTMLDivElement>()
+self.MonacoEnvironment = {
+  getWorker: function (workerId, label) {
+    const getWorkerModule = (moduleUrl: string) => {
+      return new Worker(self.MonacoEnvironment.getWorkerUrl(moduleUrl), {
+        name: label,
+        type: 'module'
+      })
+    }
 
-// let editor:
-//   | {
-//       editor: Monaco.editor.IStandaloneCodeEditor
-//       models: {
-//         [key: string]: {
-//           getModel: () => Monaco.editor.ITextModel
-//           activate: () => void
-//           dispose: () => void
-//         }
-//       }
-//       dispose: () => void
-//     }
-//   | undefined
+    switch (label) {
+      case 'json':
+        return getWorkerModule(
+          '/monaco-editor/esm/vs/language/json/json.worker?worker'
+        )
+      case 'css':
+      case 'scss':
+      case 'less':
+        return getWorkerModule(
+          '/monaco-editor/esm/vs/language/css/css.worker?worker'
+        )
+      case 'html':
+      case 'handlebars':
+      case 'razor':
+        return getWorkerModule(
+          '/monaco-editor/esm/vs/language/html/html.worker?worker'
+        )
+      case 'typescript':
+      case 'javascript':
+        return getWorkerModule(
+          '/monaco-editor/esm/vs/language/typescript/ts.worker?worker'
+        )
+      default:
+        return getWorkerModule(
+          '/monaco-editor/esm/vs/editor/editor.worker?worker'
+        )
+    }
+  }
+}
 
-// // Change model
-// const activate = (value: 'markdown' | 'css') => {
-//   editor?.models[value].activate()
-// }
+let editorInstance: monaco.editor.IStandaloneCodeEditor | null = null
 
-// // Setup Monaco editor
-// onMounted(async () => {
-//   if (editorRef.value && !editor) {
-//     editor = await setupMonacoEditor(editorRef.value)
-//     activate('markdown')
-//   }
-// })
+onMounted(() => {
+  if (editorRef.value) {
+    editorInstance = monaco.editor.create(editorRef.value, {
+      value: "function hello() {\n\talert('Hello world!');\n}",
+      language: 'javascript'
+    })
+  }
+})
 
-// onBeforeUnmount(() => editor?.dispose())
-
-// // Watch the updates of editor content on other places
-// const { data, toggleMdFlag, toggleCssFlag } = useDataStore()
-
-// watch(
-//   () => data.mdFlag,
-//   () => {
-//     console.log('mdFlag changed')
-//     if (data.mdFlag) {
-//       editor?.models['markdown'].getModel().setValue(data.mdContent)
-//       toggleMdFlag(false)
-//     }
-//   }
-// )
-
-// watch(
-//   () => data.cssFlag,
-//   () => {
-//     if (data.cssFlag) {
-//       editor?.models['css'].getModel().setValue(data.cssContent)
-//       toggleCssFlag(false)
-//     }
-//   }
-// )
+onBeforeUnmount(() => {
+  if (editorInstance) {
+    editorInstance.dispose()
+  }
+})
 </script>
 
 <template>
   <div
     ref="editorRef"
-    class="h-full w-full px-2"
+    class="h-full w-full px-2 bg-red-1"
   />
 </template>
 
