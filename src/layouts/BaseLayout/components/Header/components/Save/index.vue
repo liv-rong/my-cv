@@ -4,7 +4,7 @@ import { Save } from 'lucide-vue-next'
 
 <template>
   <Save
-    :size="24"
+    :size="22"
     class="cursor-pointer hover:text-orange-500"
   />
 </template>

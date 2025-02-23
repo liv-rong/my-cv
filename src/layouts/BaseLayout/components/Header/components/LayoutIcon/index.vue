@@ -4,7 +4,7 @@ import { PanelRightClose, PanelLeftClose } from 'lucide-vue-next'
 
 <template>
   <PanelRightClose
-    :size="24"
+    :size="22"
     class="cursor-pointer hover:text-orange-500"
   />
 </template>

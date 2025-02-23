@@ -8,18 +8,14 @@ import Operate from '@/components/Operate/index.vue'
   <div
     class="flex justify-between items-center w-full h-[calc(100vh-91px)] border border-solid"
   >
-    <div class="flex justify-between items-center flex-1 h-full">
-      <div class="h-full">
-        <Editor />
-      </div>
-      <div class="bg-bluegray w-2 h-full cursor-move" />
-      <div class="h-full overflow-auto p-2">
-        <Preview />
-      </div>
-    </div>
-    <div class="w-[200px] h-full border-2 border-l-solid border-l-amber-500">
-      <Operate />
-    </div>
+    <NSplit
+      min="200px"
+      max="800px"
+      default-size="50%"
+    >
+      <template #1> <Editor /> </template>
+      <template #2> <Preview /></template>
+    </NSplit>
   </div>
 </template>
 

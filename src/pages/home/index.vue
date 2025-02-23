@@ -1,27 +1,12 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { add } from '@starry-sky-studio/utils'
 const router = useRouter()
-const count = ref(0)
 </script>
 
 <template>
   <div
     class="flex flex-col items-center justify-center min-h-[calc(100vh-91px)]"
   >
-    <n-button
-      type="primary"
-      size="large"
-      @click="
-        () => {
-          count = add(count, 1)
-        }
-      "
-    >
-      {{ count }}
-    </n-button>
-
     <h1 class="text-4xl font-bold text-orange-500">
       用 Markdown 写简历！ OhMyCV
     </h1>

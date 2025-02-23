@@ -25,7 +25,7 @@ import LayoutIcon from './components/LayoutIcon/index.vue'
         loading="eager"
         width="26"
       />
-      <span class="text-xl text-orange-500 font-bold">{{ APP_NAME }}</span>
+      <span class="text-xl text-orange-500">{{ APP_NAME }}</span>
     </div>
 
     <div class="flex gap-2 justify-end items-center">
