@@ -3,6 +3,25 @@ import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 import * as monaco from 'monaco-editor'
 
+import markdownit from 'markdown-it'
+
+import hljs from 'highlight.js' // https://highlightjs.org
+
+const md = markdownit({
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(str, { language: lang }).value
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    return '' // use external default escaping
+  }
+})
+const result = md.render('# it!')
+
 const editorRef = ref<HTMLDivElement | null>(null)
 
 self.MonacoEnvironment = {
@@ -50,7 +69,7 @@ onMounted(() => {
   if (editorRef.value) {
     editorInstance = monaco.editor.create(editorRef.value, {
       value: "function hello() {\n\talert('Hello world!');\n}",
-      language: 'javascript'
+      language: 'markdown'
     })
   }
 })
@@ -63,10 +82,14 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div
-    ref="editorRef"
-    class="h-full w-full px-2 bg-red-1"
-  />
+  <div>
+    <div
+      ref="editorRef"
+      class="h-[400px] w-full px-2 bg-red-1"
+    ></div>
+
+    <div v-html="result"></div>
+  </div>
 </template>
 
 <style scoped></style>
