@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { AppMetadata } from '@/constants/index.ts'
-const { APP_NAME } = AppMetadata
-import { useRouter } from 'vue-router'
-const router = useRouter()
 import Github from './components/github/index.vue'
 import Resume from './components/resume/index.vue'
 import Save from './components/Save/index.vue'
 import LayoutIcon from './components/LayoutIcon/index.vue'
+import { AppMetadata } from '@/constants/index.ts'
+import { useRouter } from 'vue-router'
+const router = useRouter()
+const { APP_NAME } = AppMetadata
 </script>
 
 <template>

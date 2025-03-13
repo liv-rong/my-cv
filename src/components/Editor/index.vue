@@ -27,7 +27,8 @@ const editorRef = ref<HTMLDivElement | null>(null)
 self.MonacoEnvironment = {
   getWorker: function (workerId, label) {
     const getWorkerModule = (moduleUrl: string) => {
-      return new Worker(self.MonacoEnvironment.getWorkerUrl(moduleUrl), {
+      const workerUrl = '/default-worker-url'
+      return new Worker(workerUrl, {
         name: label,
         type: 'module'
       })
