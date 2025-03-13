@@ -19,3 +19,4 @@ Cmds
 Katex
 Deflist
 MarkdownIt
+corepack

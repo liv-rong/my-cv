@@ -1,0 +1,9 @@
+services:
+  web:
+    container_name: my-cv
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '8080:80'
