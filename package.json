@@ -21,6 +21,7 @@
     "@starry-sky-studio/ui": "^1.0.0",
     "@starry-sky-studio/utils": "^0.1.0",
     "@types/nprogress": "^0.2.3",
+    "highlight.js": "^11.11.1",
     "lucide-vue-next": "^0.376.0",
     "markdown-it": "^14.1.0",
     "markdown-it-link-attributes": "^4.0.1",
