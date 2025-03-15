@@ -13,6 +13,7 @@ declare module 'vue' {
     NLayout: (typeof import('naive-ui'))['NLayout']
     NLayoutHeader: (typeof import('naive-ui'))['NLayoutHeader']
     NSplit: (typeof import('naive-ui'))['NSplit']
+    NTooltip: (typeof import('naive-ui'))['NTooltip']
     Operate: (typeof import('./src/components/Operate/index.vue'))['default']
     Preview: (typeof import('./src/components/Preview/index.vue'))['default']
     RouterLink: (typeof import('vue-router'))['RouterLink']

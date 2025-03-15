@@ -6,9 +6,14 @@ import { NTooltip } from 'naive-ui'
 </script>
 
 <template>
-  <Github
-    :size="20"
-    class="cursor-pointer hover:text-orange-500"
-    @click="() => BrowserUtils.openNewWindow(AppMetadata.REPO_GITHUB_URL)"
-  />
+  <NTooltip trigger="hover">
+    <template #trigger>
+      <Github
+        :size="20"
+        class="cursor-pointer hover:text-orange-500"
+        @click="() => BrowserUtils.openNewWindow(AppMetadata.REPO_GITHUB_URL)"
+      />
+    </template>
+    Github
+  </NTooltip>
 </template>

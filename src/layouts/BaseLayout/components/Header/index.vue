@@ -28,7 +28,7 @@ const { APP_NAME } = AppMetadata
       <span class="text-xl text-orange-500">{{ APP_NAME }}</span>
     </div>
 
-    <div class="flex gap-2 justify-end items-center">
+    <div class="flex gap-3 justify-end items-center">
       <Resume />
       <Github />
       <Save />
