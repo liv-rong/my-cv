@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useDataStore } from '@/store/data'
 import { ResumeFrontMatter, ResumeHeaderItem } from '@/types/index'
-
 import MarkdownIt from 'markdown-it'
 import LinkAttributes from 'markdown-it-link-attributes'
 import { frontmatter } from './preview'

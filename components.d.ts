@@ -10,6 +10,7 @@ declare module 'vue' {
     Create: (typeof import('./src/components/Create/index.vue'))['default']
     Editor: (typeof import('./src/components/Editor/index.vue'))['default']
     NButton: (typeof import('naive-ui'))['NButton']
+    NIcon: (typeof import('naive-ui'))['NIcon']
     NLayout: (typeof import('naive-ui'))['NLayout']
     NLayoutHeader: (typeof import('naive-ui'))['NLayoutHeader']
     NSplit: (typeof import('naive-ui'))['NSplit']

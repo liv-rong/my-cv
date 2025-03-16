@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import Editor from '@/components/Editor/index.vue'
 import Preview from '@/components/Preview/index.vue'
 import Operate from '@/components/Operate/index.vue'
+
+const valueMd = ref('## md')
 </script>
 
 <template>
@@ -13,8 +17,10 @@ import Operate from '@/components/Operate/index.vue'
       max="800px"
       default-size="50%"
     >
-      <template #1> <Editor /> </template>
-      <template #2> <Preview /></template>
+      <template #1>
+        <Editor :valueMd="valueMd" />
+      </template>
+      <template #2> <Preview :valueMd="valueMd" /></template>
     </NSplit>
   </div>
 </template>
