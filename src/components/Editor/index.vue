@@ -7,7 +7,13 @@ import markdownit from 'markdown-it'
 
 import hljs from 'highlight.js'
 
-const valueMd = ref('## md')
+const props = defineProps({
+  valueMd: String
+})
+
+const emit = defineEmits<{
+  handleValueMd: [value: string]
+}>()
 
 const md = markdownit({
   highlight: function (str, lang) {
@@ -18,76 +24,28 @@ const md = markdownit({
         console.log(err)
       }
     }
-    return '' // use external default escaping
+    return ''
   }
 })
-let result = md.render(valueMd.value)
+let result = md.render(props.valueMd)
 
 const editorRef = ref<HTMLDivElement | null>(null)
-
-// self.MonacoEnvironment = {
-//   getWorker: function (workerId, label) {
-//     const getWorkerModule = (moduleUrl: string) => {
-//       const workerUrl = '/default-worker-url'
-//       return new Worker(workerUrl, {
-//         name: label,
-//         type: 'module'
-//       })
-//     }
-
-//     switch (label) {
-//       case 'json':
-//         return getWorkerModule(
-//           '/monaco-editor/esm/vs/language/json/json.worker?worker'
-//         )
-//       case 'css':
-//       case 'scss':
-//       case 'less':
-//         return getWorkerModule(
-//           '/monaco-editor/esm/vs/language/css/css.worker?worker'
-//         )
-//       case 'html':
-//       case 'handlebars':
-//       case 'razor':
-//         return getWorkerModule(
-//           '/monaco-editor/esm/vs/language/html/html.worker?worker'
-//         )
-//       case 'typescript':
-//       case 'javascript':
-//         return getWorkerModule(
-//           '/monaco-editor/esm/vs/language/typescript/ts.worker?worker'
-//         )
-//       default:
-//         return getWorkerModule(
-//           '/monaco-editor/esm/vs/editor/editor.worker?worker'
-//         )
-//     }
-//   }
-// }
 
 let editorInstance: monaco.editor.IStandaloneCodeEditor | null = null
 
 onMounted(() => {
   if (editorRef.value) {
     editorInstance = monaco.editor.create(editorRef.value, {
-      value: valueMd.value,
+      value: props.valueMd,
       language: 'markdown',
       automaticLayout: true
     })
     editorInstance.onDidChangeModelContent(() => {
       // console.log(editorInstance?.getValue())
-      valueMd.value = editorInstance?.getValue() ?? ''
+      emit('handleValueMd', editorInstance?.getValue() ?? '')
     })
   }
 })
-
-watch(
-  () => valueMd.value,
-  (value, pre) => {
-    console.log(value, pre)
-    result = md.render(value)
-  }
-)
 
 onBeforeUnmount(() => {
   if (editorInstance) {
@@ -102,9 +60,6 @@ onBeforeUnmount(() => {
       ref="editorRef"
       class="h-[400px] w-full px-2 bg-red-1"
     ></div>
-    {{ valueMd }}
-
-    <div v-html="result"></div>
   </div>
 </template>
 

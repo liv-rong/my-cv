@@ -6,6 +6,10 @@ import Preview from '@/components/Preview/index.vue'
 import Operate from '@/components/Operate/index.vue'
 
 const valueMd = ref('## md')
+
+const handleValueMd = (value: string) => {
+  valueMd.value = value
+}
 </script>
 
 <template>
@@ -18,7 +22,10 @@ const valueMd = ref('## md')
       default-size="50%"
     >
       <template #1>
-        <Editor :valueMd="valueMd" />
+        <Editor
+          :valueMd="valueMd"
+          @handleValueMd="handleValueMd"
+        />
       </template>
       <template #2> <Preview :valueMd="valueMd" /></template>
     </NSplit>
